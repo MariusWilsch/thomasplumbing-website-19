@@ -7,11 +7,9 @@ import Navbar from './Navbar';
 const Header = () => {
   return (
     <header className="w-full">
-      <div className="container mx-auto py-6 px-4 flex justify-between items-center">
+      <div className="container mx-auto py-4 px-4 flex justify-between items-center">
         <Logo />
-        <div className="border border-gray-200 rounded-lg px-6 py-3 bg-gray-50">
-          <ContactInfo />
-        </div>
+        <ContactInfo />
       </div>
       <Navbar />
     </header>

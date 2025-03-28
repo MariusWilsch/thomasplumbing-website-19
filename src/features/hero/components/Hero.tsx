@@ -37,7 +37,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-6">
             <Button 
               variant="default" 
-              className="bg-blue-500 text-white hover:bg-blue-600 py-4 px-6 text-lg font-medium"
+              className="bg-blue-500 hover:bg-blue-600 text-white py-4 px-6 text-lg font-medium"
             >
               MAKE AN APPOINTMENT
             </Button>
