@@ -5,6 +5,7 @@ import { Hero } from '@/features/hero';
 import { AboutSection } from '@/features/about/components';
 import { ServicesBanner, TeamFeatures } from '@/features/services';
 import { StatsCounter } from '@/features/stats';
+import { ServicePortfolio } from '@/features/portfolio';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <ServicesBanner />
       <TeamFeatures />
       <StatsCounter />
+      <ServicePortfolio />
     </div>
   );
 };
