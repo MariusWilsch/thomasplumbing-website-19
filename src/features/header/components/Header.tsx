@@ -8,12 +8,12 @@ const Header = () => {
   return (
     <header className="w-full">
       <div className="container mx-auto">
-        <div className="py-4 px-4 flex justify-between items-center">
+        <div className="py-4 flex justify-between items-center">
           <Logo />
           <ContactInfo />
         </div>
-        <Navbar />
       </div>
+      <Navbar />
     </header>
   );
 };
