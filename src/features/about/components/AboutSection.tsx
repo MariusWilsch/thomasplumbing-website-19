@@ -57,7 +57,7 @@ const AboutSection = () => {
 
           {/* Right side - Accordion */}
           <div className="border rounded-lg overflow-hidden shadow-sm">
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible defaultValue="mission" className="w-full">
               {/* Our Company Mission */}
               <AccordionItem value="mission">
                 <AccordionTrigger className="px-6 py-4 bg-gray-50 hover:bg-gray-100">
