@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import useEmblaCarousel from 'embla-carousel-react';
 
 const testimonials = [
   {
@@ -29,6 +30,53 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (emblaApi) {
+      // Auto-scroll function
+      const autoScroll = () => {
+        if (emblaApi.canScrollNext()) {
+          emblaApi.scrollNext();
+        } else {
+          emblaApi.scrollTo(0);
+        }
+      };
+
+      // Set up interval for auto-scrolling (3 seconds)
+      intervalRef.current = setInterval(autoScroll, 3000);
+
+      // Pause auto-scroll when user interacts with carousel
+      const onPointerDown = () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+      };
+
+      const onPointerUp = () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+        intervalRef.current = setInterval(autoScroll, 3000);
+      };
+
+      emblaApi.on('pointerDown', onPointerDown);
+      emblaApi.on('pointerUp', onPointerUp);
+
+      // Clean up function
+      return () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+        if (emblaApi) {
+          emblaApi.off('pointerDown', onPointerDown);
+          emblaApi.off('pointerUp', onPointerUp);
+        }
+      };
+    }
+  }, [emblaApi]);
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -37,31 +85,33 @@ const TestimonialsSection = () => {
           <h3 className="text-3xl md:text-4xl font-bold mb-8">ABOUT US</h3>
         </div>
         
-        <Carousel className="w-full max-w-5xl mx-auto">
-          <CarouselContent>
-            {testimonials.map(testimonial => (
-              <CarouselItem key={testimonial.id}>
-                <Card className="border-none shadow-none">
-                  <CardContent className="flex flex-col items-center p-6">
-                    <Avatar className="w-20 h-20 mb-4">
-                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    
-                    <h4 className="text-xl font-semibold text-gray-800">{testimonial.name}</h4>
-                    <p className="text-blue-500 mb-4">{testimonial.role}</p>
-                    
-                    <p className="text-gray-600 text-center max-w-2xl">
-                      {testimonial.quote}
-                    </p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
-        </Carousel>
+        <div className="w-full max-w-5xl mx-auto" ref={emblaRef}>
+          <Carousel>
+            <CarouselContent>
+              {testimonials.map(testimonial => (
+                <CarouselItem key={testimonial.id}>
+                  <Card className="border-none shadow-none">
+                    <CardContent className="flex flex-col items-center p-6">
+                      <Avatar className="w-20 h-20 mb-4">
+                        <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                      
+                      <h4 className="text-xl font-semibold text-gray-800">{testimonial.name}</h4>
+                      <p className="text-blue-500 mb-4">{testimonial.role}</p>
+                      
+                      <p className="text-gray-600 text-center max-w-2xl">
+                        {testimonial.quote}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0" />
+            <CarouselNext className="right-0" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
