@@ -8,7 +8,7 @@ import {
   AccordionTrigger 
 } from '@/components/ui/accordion';
 
-const AboutSection = () => {
+const PromiseSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
@@ -115,4 +115,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default PromiseSection;

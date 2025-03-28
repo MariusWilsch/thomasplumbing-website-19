@@ -2,7 +2,7 @@
 import React from 'react';
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
-import { AboutSection } from '@/features/about/components';
+import { PromiseSection } from '@/features/about/components';
 import { ServicesBanner, TeamFeatures } from '@/features/services';
 import { StatsCounter } from '@/features/stats';
 import { ServicePortfolio } from '@/features/portfolio';
@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <Hero />
-      <AboutSection />
+      <PromiseSection />
       <ServicesBanner />
       <TeamFeatures />
       <StatsCounter />
