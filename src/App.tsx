@@ -29,8 +29,10 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
-          <ContactInfoBar />
-          <Footer />
+          <div className="relative">
+            <ContactInfoBar />
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     </TooltipProvider>
