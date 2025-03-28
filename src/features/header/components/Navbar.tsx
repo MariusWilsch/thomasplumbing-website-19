@@ -15,7 +15,7 @@ const Navbar = () => {
   const location = useLocation();
   
   return (
-    <nav className="w-full bg-white shadow-[0_2px_4px_rgba(0,0,0,0.08)]">
+    <nav className="w-full bg-blue-500 shadow-[0_2px_4px_rgba(0,0,0,0.08)]">
       <div className="container mx-auto flex justify-between items-center py-3">
         <div className="flex">
           {navItems.map((item) => (
@@ -23,13 +23,13 @@ const Navbar = () => {
               key={item.name}
               to={item.href}
               className={`px-6 py-2 transition-colors duration-200 font-medium
-                ${location.pathname === item.href ? 'text-blue-500' : 'text-gray-700 hover:text-blue-500'}`}
+                ${location.pathname === item.href ? 'text-white font-bold' : 'text-white/90 hover:text-white'}`}
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <button className="text-blue-500 px-4" aria-label="Search">
+        <button className="text-white px-4" aria-label="Search">
           <Search className="h-5 w-5" />
         </button>
       </div>
