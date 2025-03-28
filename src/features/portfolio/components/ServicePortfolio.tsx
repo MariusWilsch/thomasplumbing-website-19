@@ -1,21 +1,16 @@
 
-import React, { useState } from 'react';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
-type ServiceCategory = 'all' | 'plumbing' | 'electrical' | 'repair' | 'painting';
-
 type ServiceItem = {
   id: number;
-  category: Exclude<ServiceCategory, 'all'>;
+  category: 'plumbing' | 'electrical' | 'repair' | 'painting';
   imagePath: string;
   alt: string;
 };
 
 const ServicePortfolio = () => {
-  const [activeCategory, setActiveCategory] = useState<ServiceCategory>('all');
-
   const services: ServiceItem[] = [
     {
       id: 1,
@@ -67,10 +62,6 @@ const ServicePortfolio = () => {
     }
   ];
 
-  const filteredServices = activeCategory === 'all' 
-    ? services 
-    : services.filter(service => service.category === activeCategory);
-
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
@@ -79,20 +70,10 @@ const ServicePortfolio = () => {
           <p className="max-w-3xl mx-auto text-gray-600 mb-8">
             We offer a comprehensive range of home maintenance services from plumbing and electrical work to repairs and painting.
           </p>
-          
-          <Tabs defaultValue="all" className="w-full justify-center" onValueChange={(value) => setActiveCategory(value as ServiceCategory)}>
-            <TabsList className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 mb-8">
-              <TabsTrigger value="all" className="uppercase font-semibold">ALL</TabsTrigger>
-              <TabsTrigger value="plumbing" className="uppercase font-semibold">PLUMBING</TabsTrigger>
-              <TabsTrigger value="electrical" className="uppercase font-semibold">ELECTRICAL</TabsTrigger>
-              <TabsTrigger value="repair" className="uppercase font-semibold">REPAIR</TabsTrigger>
-              <TabsTrigger value="painting" className="uppercase font-semibold">PAINTING</TabsTrigger>
-            </TabsList>
-          </Tabs>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {filteredServices.map((service) => (
+          {services.map((service) => (
             <Card key={service.id} className="overflow-hidden group cursor-pointer">
               <div className="relative aspect-square overflow-hidden">
                 <img 
