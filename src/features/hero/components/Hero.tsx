@@ -12,30 +12,39 @@ const Hero = () => {
     <section className="w-full">
       {/* Hero banner with image background */}
       <div className="relative h-[600px] bg-gray-800">
-        {/* Background image with overlay */}
+        {/* Background image with overlay gradient */}
         <div 
-          className="absolute inset-0 bg-black/50 z-10"
+          className="absolute inset-0 z-10"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d')",
+            backgroundImage: `
+              linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)),
+              url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d')
+            `,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundBlend: "overlay"
+            backgroundBlendMode: "normal"
           }}
         ></div>
         
         {/* Hero content */}
         <div className="container mx-auto px-6 relative z-20 h-full flex flex-col justify-center text-white">
-          <h1 className="text-5xl font-bold leading-tight mb-6 max-w-2xl">
+          <h1 className="text-6xl font-bold leading-tight mb-6 max-w-2xl tracking-wide">
             WE WILL GLADLY FIX EVERYTHING THAT BROKE
           </h1>
-          <p className="text-xl mb-8 max-w-xl">
+          <p className="text-xl mb-10 max-w-xl">
             OUR MASTERS ARE READY TO LEAVE FOR YOU AT ANY TIME
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="default" className="bg-white text-gray-800 hover:bg-gray-200">
+          <div className="flex flex-wrap gap-6">
+            <Button 
+              variant="default" 
+              className="bg-blue-500 text-white hover:bg-blue-600 py-4 px-6 text-lg font-medium"
+            >
               MAKE AN APPOINTMENT
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10 py-4 px-6 text-lg font-medium"
+            >
               MORE ABOUT US
             </Button>
           </div>
@@ -43,7 +52,7 @@ const Hero = () => {
       </div>
 
       {/* Feature cards */}
-      <div className="container mx-auto px-6 -mt-20 relative z-30">
+      <div className="container mx-auto px-6 -mt-24 relative z-30">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 shadow-lg">
           <FeatureCard
             icon={Award}

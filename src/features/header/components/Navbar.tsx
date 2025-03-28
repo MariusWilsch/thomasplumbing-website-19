@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
   { name: 'HOME', href: '/' },
@@ -12,22 +12,25 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
+  
   return (
-    <nav className="bg-blue-500 w-full">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="w-full bg-white shadow-[0_2px_4px_rgba(0,0,0,0.08)]">
+      <div className="container mx-auto flex justify-between items-center py-4">
         <div className="flex">
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className="text-white px-6 py-4 hover:bg-blue-600 transition-colors duration-200"
+              className={`px-8 py-4 transition-colors duration-200 font-medium
+                ${location.pathname === item.href ? 'text-blue-500' : 'text-gray-700 hover:text-blue-500'}`}
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <button className="text-white px-4" aria-label="Search">
-          <Search />
+        <button className="text-blue-500 px-4" aria-label="Search">
+          <Search className="h-6 w-6" />
         </button>
       </div>
     </nav>
