@@ -44,7 +44,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div>
+    <div className="h-full flex flex-col">
       <h2 className="text-3xl font-bold mb-6">Feedback form contact with us</h2>
       <p className="mb-8 text-gray-600">
         If you'd like a free consultation, please start by completing the form:
