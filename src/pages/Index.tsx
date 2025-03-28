@@ -3,6 +3,7 @@ import React from 'react';
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
 import { AboutSection } from '@/features/about/components';
+import { ServicesBanner } from '@/features/services';
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <Header />
       <Hero />
       <AboutSection />
+      <ServicesBanner />
     </div>
   );
 };
