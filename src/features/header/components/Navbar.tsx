@@ -32,20 +32,7 @@ const Navbar = () => {
     const section = document.getElementById(sectionId);
     
     if (section) {
-      section.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start'
-      });
-      
-      // Apply a slower, more controlled scroll
-      const yOffset = -80; // Adjust for header height if needed
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth',
-        // This makes the scroll take longer (slower)
-      });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
   
