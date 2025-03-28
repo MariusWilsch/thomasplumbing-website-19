@@ -6,6 +6,9 @@ import { AboutSection } from '@/features/about/components';
 import { ServicesBanner, TeamFeatures } from '@/features/services';
 import { StatsCounter } from '@/features/stats';
 import { ServicePortfolio } from '@/features/portfolio';
+import { TestimonialsSection } from '@/features/testimonials';
+import { ContactInfoBar } from '@/features/contact';
+import { Footer } from '@/features/footer';
 
 const Index = () => {
   return (
@@ -17,6 +20,9 @@ const Index = () => {
       <TeamFeatures />
       <StatsCounter />
       <ServicePortfolio />
+      <TestimonialsSection />
+      <ContactInfoBar />
+      <Footer />
     </div>
   );
 };
