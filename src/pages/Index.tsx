@@ -4,6 +4,7 @@ import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
 import { AboutSection } from '@/features/about/components';
 import { ServicesBanner, TeamFeatures } from '@/features/services';
+import { StatsCounter } from '@/features/stats';
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <AboutSection />
       <ServicesBanner />
       <TeamFeatures />
+      <StatsCounter />
     </div>
   );
 };
