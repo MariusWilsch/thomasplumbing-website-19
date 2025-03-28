@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Search } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
@@ -16,7 +15,7 @@ const Navbar = () => {
   
   return (
     <nav className="w-full bg-blue-500 shadow-[0_2px_4px_rgba(0,0,0,0.08)]">
-      <div className="container mx-auto flex justify-between items-center py-3 px-4">
+      <div className="container mx-auto flex justify-center items-center py-3 px-4">
         <div className="flex">
           {navItems.map((item) => (
             <Link
@@ -29,9 +28,6 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <button className="text-white px-4" aria-label="Search">
-          <Search className="h-5 w-5" />
-        </button>
       </div>
     </nav>
   );
