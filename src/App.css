@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -16,6 +17,12 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Section spacing utility class */
+.section-spacing {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
 @keyframes logo-spin {

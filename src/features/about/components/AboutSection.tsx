@@ -6,9 +6,9 @@ import { Textarea } from '@/components/ui/textarea';
 
 const AboutSection = () => {
   return (
-    <section id="about-section" className="py-16 bg-gray-50">
+    <section id="about-section" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-2">ABOUT US</h2>
         </div>
 

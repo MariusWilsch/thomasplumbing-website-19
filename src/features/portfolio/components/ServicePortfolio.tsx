@@ -63,9 +63,9 @@ const ServicePortfolio = () => {
   ];
 
   return (
-    <section id="services-section" className="py-16 bg-white">
+    <section id="services-section" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR SERVICES</h2>
           <p className="max-w-3xl mx-auto text-gray-600 mb-8">
             We offer a comprehensive range of home maintenance services from plumbing and electrical work to repairs and painting.
@@ -87,7 +87,7 @@ const ServicePortfolio = () => {
           ))}
         </div>
       </div>
-      <Separator className="mt-16" />
+      <Separator className="mt-20" />
     </section>
   );
 };

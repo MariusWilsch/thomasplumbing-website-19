@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const ServicesBanner = () => {
   return (
-    <section className="bg-blue-500 py-16 text-white relative overflow-hidden">
+    <section className="bg-blue-500 py-20 text-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left content */}

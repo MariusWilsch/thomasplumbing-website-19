@@ -58,9 +58,9 @@ const TeamFeatures = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">WE ARE THE TEAM THAT YOU NEED</h2>
           <p className="max-w-3xl mx-auto text-gray-600">
             We Provide: help with any domestic problem. You can choose the service from our list, or if you

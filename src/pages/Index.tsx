@@ -13,7 +13,7 @@ import { Footer } from '@/features/footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col space-y-2">
       <Header />
       <Hero />
       <PromiseSection />
