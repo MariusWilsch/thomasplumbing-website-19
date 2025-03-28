@@ -3,7 +3,7 @@ import React from 'react';
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
 import { AboutSection } from '@/features/about/components';
-import { ServicesBanner } from '@/features/services';
+import { ServicesBanner, TeamFeatures } from '@/features/services';
 
 const Index = () => {
   return (
@@ -12,6 +12,7 @@ const Index = () => {
       <Hero />
       <AboutSection />
       <ServicesBanner />
+      <TeamFeatures />
     </div>
   );
 };
