@@ -4,7 +4,7 @@ import { Phone, MapPin, Mail } from 'lucide-react';
 
 const ContactInfoBar = () => {
   return (
-    <div className="bg-blue-500 text-white py-8 rounded-none relative mx-auto w-4/5 max-w-6xl z-10 -mb-16">
+    <div className="bg-blue-500 text-white py-8 rounded-none relative mx-auto w-4/5 max-w-6xl z-10 -mb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Phone */}
