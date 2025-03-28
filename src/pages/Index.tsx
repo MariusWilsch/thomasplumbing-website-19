@@ -2,7 +2,7 @@
 import React from 'react';
 import { Header } from '@/features/header';
 import { Hero } from '@/features/hero';
-import { PromiseSection } from '@/features/about/components';
+import { PromiseSection } from '@/features/promise/components';
 import { ServicesBanner, TeamFeatures } from '@/features/services';
 import { StatsCounter } from '@/features/stats';
 import { ServicePortfolio } from '@/features/portfolio';

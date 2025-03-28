@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Header } from '@/features/header';
-import { PromiseSection } from '@/features/about';
+import { PromiseSection } from '@/features/promise';
 
 const About = () => {
   return (
