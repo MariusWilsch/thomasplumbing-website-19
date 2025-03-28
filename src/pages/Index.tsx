@@ -7,6 +7,7 @@ import { ServicesBanner, TeamFeatures } from '@/features/services';
 import { StatsCounter } from '@/features/stats';
 import { ServicePortfolio } from '@/features/portfolio';
 import { TestimonialsSection } from '@/features/testimonials';
+import { AboutSection } from '@/features/about';
 import { ContactInfoBar } from '@/features/contact';
 import { Footer } from '@/features/footer';
 
@@ -21,6 +22,7 @@ const Index = () => {
       <StatsCounter />
       <ServicePortfolio />
       <TestimonialsSection />
+      <AboutSection />
       <ContactInfoBar />
       <Footer />
     </div>
