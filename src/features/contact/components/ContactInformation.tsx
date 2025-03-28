@@ -34,10 +34,12 @@ const ContactInformation = () => {
           </div>
           <div>
             <h3 className="font-bold text-lg">Working Time</h3>
-            <p className="text-gray-600">Our support available to help you24 hours a day, seven days a week.</p>
-            <p className="text-gray-600">Monday-Friday: 08:00-18:00</p>
-            <p className="text-gray-600">Saturday: 08:00-16:00</p>
-            <p className="text-gray-600">Sunday: Close</p>
+            <p className="text-gray-600">Our support available to help you 24 hours a day, seven days a week.</p>
+            <div className="text-gray-600 mt-2 space-y-1">
+              <p>Monday-Friday: 08:00-18:00</p>
+              <p>Saturday: 08:00-16:00</p>
+              <p>Sunday: Close</p>
+            </div>
           </div>
         </div>
         
