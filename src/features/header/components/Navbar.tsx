@@ -12,6 +12,21 @@ const navItems = [
 const Navbar = () => {
   const location = useLocation();
   
+  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      // If we're on the homepage, scroll to the services section
+      const servicesSection = document.getElementById('services-section');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to home and then scroll
+      window.location.href = '/#services-section';
+    }
+  };
+  
   return (
     <nav className="w-full bg-blue-500 shadow-[0_2px_4px_rgba(0,0,0,0.08)]">
       <div className="container mx-auto flex items-center py-3 px-4">
@@ -20,6 +35,7 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.href}
+              onClick={item.name === 'SERVICES' ? handleServicesClick : undefined}
               className={`px-6 py-2 transition-colors duration-200 font-medium
                 ${location.pathname === item.href ? 'text-white font-bold' : 'text-white/90 hover:text-white'}`}
             >
