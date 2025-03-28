@@ -37,7 +37,7 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="w-full bg-blue-500 sticky top-0 z-50 shadow-md">
+    <nav className="w-full bg-blue-500 shadow-[0_2px_4px_rgba(0,0,0,0.08)] sticky top-0 z-20">
       <div className="container mx-auto flex items-center py-3 px-4">
         <div className="flex">
           {navItems.map((item) => (
