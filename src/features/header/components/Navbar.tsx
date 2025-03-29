@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
@@ -11,15 +11,6 @@ const navItems = [
 
 const Navbar = () => {
   const location = useLocation();
-  const [headerHeight, setHeaderHeight] = useState(0);
-  
-  // Calculate header height on component mount
-  useEffect(() => {
-    const header = document.querySelector('header');
-    if (header) {
-      setHeaderHeight(header.offsetHeight);
-    }
-  }, []);
   
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: string) => {
     // Handle home navigation normally
@@ -41,19 +32,12 @@ const Navbar = () => {
     const section = document.getElementById(sectionId);
     
     if (section) {
-      // Get the position of the section relative to the document
-      const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
-      
-      // Scroll to the section with an offset for the header height
-      window.scrollTo({
-        top: sectionPosition - headerHeight - 20, // Adding 20px additional offset for spacing
-        behavior: 'smooth'
-      });
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
   
   return (
-    <nav className="w-full bg-blue-500 shadow-[0_2px_4px_rgba(0,0,0,0.08)] sticky top-0 z-20">
+    <nav className="w-full bg-blue-500 sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex items-center py-3 px-4">
         <div className="flex">
           {navItems.map((item) => (
