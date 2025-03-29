@@ -43,7 +43,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              to={item.href}
+              to={item.href.startsWith('#') ? (location.pathname === '/' ? item.href : '/'+item.href) : item.href}
               onClick={(e) => handleNavClick(e, item.name)}
               className={`px-6 py-2 transition-colors duration-200 font-medium
                 ${
