@@ -1,25 +1,20 @@
 
-import React from 'react';
-import { Clock, Phone } from 'lucide-react';
+import React from "react";
+import { PhoneCall } from "lucide-react";
+import { useIsMobile } from "../../../hooks/use-mobile";
 
-const ContactInfo = () => {
+export const ContactInfo = () => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="flex items-start gap-6 text-sm">
-      <div className="flex items-start gap-3 py-2">
-        <Clock className="text-blue-500 h-5 w-5 flex-shrink-0 mt-1" />
-        <div>
-          <div className="text-gray-800 font-semibold">Mon – Fri: 10AM - 7PM</div>
-          <div className="text-gray-800 font-semibold">Sat - Sun: 10AM - 3PM</div>
-        </div>
+    <div className={`flex items-center gap-2 ${isMobile ? "justify-center" : ""}`}>
+      <div className="h-10 w-10 bg-blue-600 rounded-full flex items-center justify-center">
+        <PhoneCall className="h-5 w-5 text-white" />
       </div>
-      <div className="flex items-start gap-3 py-2">
-        <Phone className="text-blue-500 h-5 w-5 flex-shrink-0 mt-1" />
-        <div>
-          <div className="text-gray-800 font-bold text-lg">(719) 445-2808</div>
-        </div>
+      <div>
+        <p className="text-gray-600 text-sm">Call us now</p>
+        <p className="font-bold text-blue-600">+1 (555) 123-4567</p>
       </div>
     </div>
   );
 };
-
-export default ContactInfo;
